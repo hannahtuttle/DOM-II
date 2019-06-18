@@ -1,53 +1,40 @@
 // Your code goes here
 //1
 const navBtn = document.querySelectorAll('.nav-link')
-navBtn[0].addEventListener('mouseover', event => {
-    event.target.style.color = 'blue';})
-navBtn[1].addEventListener('mouseover', event => {
-        event.target.style.color = 'blue';})
-navBtn[2].addEventListener('mouseover', event => {
-            event.target.style.color = 'blue';})
-navBtn[3].addEventListener('mouseover', event => {
-                event.target.style.color = 'blue';})
+
+navBtn.forEach((n) => {
+    n.addEventListener('mouseover', event => {
+        event.target.style.color = 'blue';
+    })})
 
 
 //2
-navBtn[0].addEventListener('mouseleave', event => {
-    event.target.style.color = 'black';
-})
-navBtn[1].addEventListener('mouseleave', event => {
-    event.target.style.color = 'black';
-})
-navBtn[2].addEventListener('mouseleave', event => {
-    event.target.style.color = 'black';
-})
-navBtn[3].addEventListener('mouseleave', event => {
-    event.target.style.color = 'black';
-})
+navBtn.forEach((n) => {
+    n.addEventListener('mouseleave', event => {
+        event.target.style.color = 'black';
+    })})
 
-navBtn[0].addEventListener('click', event => {
-    event.preventDefault
-})
-navBtn[1].addEventListener('click', event => {
-    event.preventDefault
-})
-navBtn[2].addEventListener('click', event => {
-    event.preventDefault
-})
-navBtn[3].addEventListener('click', event => {
-    event.preventDefault
-})
+navBtn.forEach((n) => {
+    n.addEventListener('click', event => {
+        event.preventDefault();
+    })})
+
 
 
 //3
 const photo = document.querySelectorAll('.img-content')
-console.log(photo)
-photo[0].addEventListener('dblclick', event => {
-    event.target.style.transform = 'scale(1.4)'
-})
-photo[1].addEventListener('dblclick', event => {
-    event.target.style.transform = 'scale(1.4)'
-})
+// console.log(photo)
+// photo[0].addEventListener('dblclick', event => {
+//     event.target.style.transform = 'scale(1.4)'
+// })
+// photo[1].addEventListener('dblclick', event => {
+//     event.target.style.transform = 'scale(1.4)'
+// })
+
+photo.forEach((n) => {
+    n.addEventListener('dblclick', event => {
+        event.target.style.transform = 'scale(1.4)'
+    })})
 
 //4
 
