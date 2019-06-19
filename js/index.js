@@ -23,41 +23,31 @@ navBtn.forEach((n) => {
 
 //3
 const photo = document.querySelectorAll('.img-content')
-// console.log(photo)
-// photo[0].addEventListener('dblclick', event => {
-//     event.target.style.transform = 'scale(1.4)'
-// })
-// photo[1].addEventListener('dblclick', event => {
-//     event.target.style.transform = 'scale(1.4)'
-// })
-
 photo.forEach((n) => {
     n.addEventListener('dblclick', event => {
         event.target.style.transform = 'scale(1.4)'
     })})
+photo.forEach((n) => {
+        n.addEventListener('click', event => {
+            event.target.style.transform = 'scale(1)'
+        })})
 
 //4
 
-const btnParent = document.querySelector('.destination')
-btnParent.addEventListener('click', event => {
+const btnParent = document.querySelectorAll('.destination')
+btnParent.forEach((n) => {
+    n.addEventListener('click', event => {
     event.target.style.backgroundColor = 'yellow';
-})
+})})
+
 const buttons = document.querySelectorAll('.btn')
-buttons[0].addEventListener('click', (event) => {
+buttons.forEach((n) => {
+    n.addEventListener('click', (event) => {
     event.stopPropagation()
     event.target.style.backgroundColor = 'blue';
-})
-buttons[1].addEventListener('click', (event) => {
-    event.target.style.backgroundColor = 'blue';
-})
-buttons[2].addEventListener('click', (event) => {
-    event.target.style.backgroundColor = 'blue';
-})
+})})
 
-// const welcome = document.querySelector('.intro h2')
-// welcome.addEventListener('auxclick', event => {
-//     event.target.style.backgroundColor = 'blue'
-// })
+
 //5
 const funBusPic = document.querySelector('.intro img')
 funBusPic.addEventListener('contextmenu', event => {
@@ -71,20 +61,16 @@ msDown.addEventListener('mousedown', event => {
 })
 //7
 const text = document.querySelectorAll('.text-content h2')
-text[0].addEventListener('mouseover', event => {
+text.forEach((n) => {
+    n.addEventListener('mouseover', event => {
     event.target.style.color = 'purple'
-})
-text[1].addEventListener('mouseover', event => {
-    event.target.style.color = 'purple'
-})
+})})
 
 //8
-text[0].addEventListener('mouseleave', event => {
+text.forEach((n) => {
+    n.addEventListener('mouseleave', event => {
     event.target.style.color = 'green';
-})
-text[1].addEventListener('mouseleave', event => {
-    event.target.style.color = 'green';
-})
+})})
 
 //9
 const parent = document.querySelector('.content-destination')
@@ -108,3 +94,22 @@ intro.addEventListener('mouseleave', event => {
 })
 
 
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = document.querySelector('.intro img');
+  el.onwheel = zoom;
+
+  el.addEventListener('click', event => {
+    event.target.style.transform = 'scale(0.9)'
+  })
