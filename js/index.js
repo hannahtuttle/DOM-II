@@ -108,7 +108,7 @@ function zoom(event) {
   
   let scale = 1;
   const el = document.querySelector('.intro img');
-  el.onwheel = zoom;
+  el.addEventListener('wheel', zoom);
 
   el.addEventListener('click', event => {
     event.target.style.transform = 'scale(0.9)'
